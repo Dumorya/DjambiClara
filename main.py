@@ -8,16 +8,9 @@ from front.board_template import Application
 import tkinter as tk
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print("Go")
 
 nb_rows = 9
 nb_columns = 9
@@ -26,6 +19,10 @@ root = tk.Tk()
 app = Application(nb_rows, nb_columns, master=root)
 app.mainloop()
 board1 = Board(nb_rows, nb_columns)
-militant1 = Militant(True, "yellow", [4, 6])
+
+militant1 = Militant(True, "yellow", [1, 7])
+militant2 = Militant(True, "blue", [4, 6])
+militant3 = Militant(True, "green", [1, 6])
+militant4 = Militant(True, "red", [4, 6])
 
 
