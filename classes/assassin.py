@@ -3,6 +3,8 @@ from .peon import Peon
 
 class Assassin(Peon):
 
+    """A assassin is made from moves, image, position, color and inherits from Peon"""
+
     def __init__(self, is_alive, color, position):
         super().__init__(is_alive, color, position)
         self._is_alive = is_alive

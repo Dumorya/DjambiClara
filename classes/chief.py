@@ -3,6 +3,8 @@ from .peon import Peon
 
 class Chief(Peon):
 
+    """A chief is made from moves, image, position, color and inherits from Peon"""
+
     def __init__(self, is_alive, color, position):
         super().__init__(is_alive, color, position)
         self._is_alive = is_alive

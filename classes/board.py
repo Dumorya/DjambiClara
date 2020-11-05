@@ -3,8 +3,11 @@ from PIL import Image, ImageTk
 
 
 class Board(tk.Frame):
+    """Creates a board which is the support of the game"""
 
     def __init__(self, nb_rows, nb_columns, peons, master=None):
+        """creates board with empty cells then fills it with peons"""
+
         super().__init__(master)
         self._master = master
         self._nb_rows = nb_rows
@@ -24,6 +27,7 @@ class Board(tk.Frame):
         self._create_grid()
 
     def _create_grid(self):
+        """creates grid with tk. Each cell is filled by a button"""
         for r in range(self._nb_rows):
             for c in range(self._nb_columns):
                 boardcell = BoardCell(self._cells[r][c])
@@ -32,6 +36,8 @@ class Board(tk.Frame):
 
 
 class BoardCell:
+
+    """This generates cells from a board, in which there are peons"""
 
     def __init__(self, peon):
         self._peon = peon

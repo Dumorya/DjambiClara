@@ -3,6 +3,8 @@ import abc
 
 class Peon(abc.ABC):
 
+    """A peon is made from moves, image, position, color and inherits from Peon"""
+
     def __init__(self, is_alive, color, position):
         self._is_alive = is_alive
         self._color = color
