@@ -16,13 +16,14 @@ class Peon(abc.ABC):
     def position(self):
         return self._position
 
+    @property
+    def color(self):
+        return self._color
+
     @abc.abstractmethod
     def action_after_move(self):
         pass
 
-    @property
     @abc.abstractmethod
     def image(self):
         pass
-
-

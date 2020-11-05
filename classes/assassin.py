@@ -15,9 +15,6 @@ class Assassin(Peon):
     def action_after_move(self):
         pass
 
+    @property
     def image(self):
         return "assets/icons/assassin.png"
-
-
-
-

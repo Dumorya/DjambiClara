@@ -15,9 +15,6 @@ class Reporter(Peon):
     def action_after_move(self):
         pass
 
+    @property
     def image(self):
         return "assets/icons/reporter.png"
-
-
-
-
