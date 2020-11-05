@@ -5,19 +5,18 @@ class Assassin(Peon):
 
     def __init__(self, is_alive, color, position):
         super().__init__(is_alive, color, position)
-        self.__is_alive = is_alive
-        self.__color = color
-        self.__position = position
-        self.__image = 'assets/icons/assassin.png'
+        self._is_alive = is_alive
+        self._color = color
+        self._position = position
 
     def available_moves(self):
         pass
 
-    def position(self):
-        pass
-
     def action_after_move(self):
         pass
+
+    def image(self):
+        return "assets/icons/assassin.png"
 
 
 

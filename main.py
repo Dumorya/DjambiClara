@@ -8,7 +8,7 @@ from classes.diplomate import Diplomate
 from classes.militant import Militant
 from classes.necromobile import Necromobile
 from classes.reporter import Reporter
-from classes.board_template import BoardTemplate
+from classes.board import Board
 import tkinter as tk
 
 if __name__ == '__main__':
@@ -16,10 +16,6 @@ if __name__ == '__main__':
 
 nb_rows = 9
 nb_columns = 9
-
-root = tk.Tk()
-app = BoardTemplate(nb_rows, nb_columns, master=root)
-app.mainloop()
 
 # MILITANTS #
 militant_green1 = Militant(True, "green", [1, 3])
@@ -86,3 +82,18 @@ diplomate_yellow = Diplomate(True, "yellow", [2, 8])
 diplomate_blue = Diplomate(True, "blue", [8, 2])
 
 diplomate_red = Diplomate(True, "red", [8, 8])
+
+peons = [militant_blue1, militant_red1, militant_green1, militant_yellow1,
+         militant_blue2, militant_red2, militant_green2, militant_yellow2,
+         militant_blue3, militant_red3, militant_green3, militant_yellow3,
+         militant_blue4, militant_red4, militant_green4, militant_yellow4,
+         chief_red, chief_blue, chief_green, chief_yellow,
+         diplomate_blue, diplomate_red, diplomate_green, diplomate_yellow,
+         necromobile_blue, necromobile_green, necromobile_yellow, necromobile_red,
+         reporter_blue, reporter_green, reporter_yellow, reporter_red,
+         assassin_blue, assassin_green, assassin_red, assassin_yellow]
+
+root = tk.Tk()
+app = Board(nb_rows, nb_columns, peons, master=root)
+app.mainloop()
+
