@@ -3,15 +3,13 @@
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 from classes.assassin import Assassin
-from classes.chef import Chef
+from classes.chief import Chief
 from classes.diplomate import Diplomate
 from classes.militant import Militant
 from classes.necromobile import Necromobile
 from classes.reporter import Reporter
-from front.board_template import Application
+from classes.board_template import BoardTemplate
 import tkinter as tk
-
-
 
 if __name__ == '__main__':
     print("Go")
@@ -20,7 +18,7 @@ nb_rows = 9
 nb_columns = 9
 
 root = tk.Tk()
-app = Application(nb_rows, nb_columns, master=root)
+app = BoardTemplate(nb_rows, nb_columns, master=root)
 app.mainloop()
 
 # MILITANTS #
@@ -44,16 +42,14 @@ militant_red2 = Militant(True, "red", [7, 2])
 militant_red3 = Militant(True, "red", [8, 3])
 militant_red4 = Militant(True, "red", [9, 3])
 
-
 # CHIEFS #
-chief_green = Chef(True, "green", [1, 1])
+chief_green = Chief(True, "green", [1, 1])
 
-chief_yellow = Chef(True, "yellow", [1, 9])
+chief_yellow = Chief(True, "yellow", [1, 9])
 
-chief_blue = Chef(True, "blue", [9, 1])
+chief_blue = Chief(True, "blue", [9, 1])
 
-chief_red = Chef(True, "red", [9, 9])
-
+chief_red = Chief(True, "red", [9, 9])
 
 # ASSASSINS #
 assassin_green = Assassin(True, "green", [1, 2])
@@ -64,7 +60,6 @@ assassin_blue = Assassin(True, "blue", [9, 8])
 
 assassin_red = Assassin(True, "red", [9, 2])
 
-
 # REPORTERS #
 reporter_green = Reporter(True, "green", [2, 2])
 
@@ -74,7 +69,6 @@ reporter_blue = Reporter(True, "blue", [8, 9])
 
 reporter_red = Reporter(True, "red", [8, 1])
 
-
 # NECROMOBILES #
 necromobile_green = Necromobile(True, "green", [3, 3])
 
@@ -83,7 +77,6 @@ necromobile_yellow = Necromobile(True, "yellow", [3, 7])
 necromobile_blue = Necromobile(True, "blue", [7, 3])
 
 necromobile_red = Necromobile(True, "red", [7, 7])
-
 
 # DIPLOMATES #
 diplomate_green = Diplomate(True, "green", [2, 2])
