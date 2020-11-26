@@ -1,6 +1,9 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 
+from classes.necromobile import Necromobile
+from classes.peon import Peon
+
 
 class Board(tk.Frame):
     """Creates a board which is the support of the game"""
@@ -14,45 +17,71 @@ class Board(tk.Frame):
         self._nb_columns = nb_columns
         self._peons = peons
         self._cells = []
+        self._active_cell = None
 
+        # intitialize empty board
         for i in range(self._nb_rows):
             self._cells.append([])
             for j in range(self._nb_columns):
-                self._cells[i].append(None)
+                cell = BoardCell(None, self, self._cells[i]).create_button(self._master)
+                self._cells[i].append(cell)
+                cell.grid(row=i, column=j)
 
+
+        # add peons in board
         for peon in self._peons:
             row_index, col_index = peon.position
-            self._cells[row_index-1][col_index-1] = peon
+            boardcell = BoardCell(peon, self, [row_index-1, col_index-1])
+            self._cells[row_index-1][col_index-1] = boardcell
+            cell = boardcell.create_button(self._master)
+            cell.grid(row=row_index-1, column=col_index-1)
 
-        self._create_grid()
+    def move_peon(self, boardcell):
+        # TODO: get position of cell when it's empty (not working with peon's position bt cell's position)
+        boardcell.position = boardcell._peon.position
 
-    def _create_grid(self):
-        """creates grid with tk. Each cell is filled by a button"""
-        for r in range(self._nb_rows):
-            for c in range(self._nb_columns):
-                boardcell = BoardCell(self._cells[r][c])
-                cell = boardcell.create_button(self._master)
-                cell.grid(row=r, column=c)
+    def set_active(self, boardcell):
+        # TODO: implement the case where we want to change our peon
+
+        if self._active_cell is None:
+            # take the peon
+            self._active_cell = boardcell
+        else:
+            # place the peon
+            self.move_peon(self._active_cell)
+            self._active_cell = None
 
 
 class BoardCell:
 
     """This generates cells from a board, in which there are peons"""
 
-    def __init__(self, peon):
+    def __init__(self, peon, board, position):
         self._peon = peon
+        self._board = board
+        self._position = position
+
+    def press_button(self):
+        print(self._position)
 
     def create_button(self, master):
         if self._peon:
             image = Image.open(self._peon.image)
             image = image.resize((60, 60), Image.ANTIALIAS)
             image_elem = ImageTk.PhotoImage(image)
-            button = tk.Button(master, image=image_elem, bg=self._peon.color)
+            button = tk.Button(
+                master,
+                image=image_elem,
+                bg=self._peon.color,
+                command=self.press_button)
             button.image = image_elem
         else:
             image = Image.open('assets/icons/blank.png')
             image_elem = ImageTk.PhotoImage(image)
-            button = tk.Button(master, image=image_elem)
+            button = tk.Button(
+                master,
+                image=image_elem,
+                command=self.press_button)
             button.image = image_elem
 
         return button

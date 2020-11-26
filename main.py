@@ -14,7 +14,7 @@ import tkinter as tk
 """Main file in which all peons are implemented and the front is launched"""
 
 if __name__ == '__main__':
-    print("Go")
+    print("Djambi")
 
 nb_rows = 9
 nb_columns = 9
