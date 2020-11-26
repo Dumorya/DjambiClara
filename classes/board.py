@@ -62,7 +62,7 @@ class BoardCell:
         self._position = position
 
     def press_button(self):
-        print(self._position)
+        self._board.set_active(self)
 
     def create_button(self, master):
         if self._peon:
