@@ -19,6 +19,8 @@ if __name__ == '__main__':
 nb_rows = 9
 nb_columns = 9
 
+# Position are like followed : [row, column]
+
 # MILITANTS #
 militant_green1 = Militant(True, "green", [1, 3])
 militant_green2 = Militant(True, "green", [2, 3])
@@ -30,15 +32,15 @@ militant_yellow2 = Militant(True, "yellow", [2, 7])
 militant_yellow3 = Militant(True, "yellow", [3, 8])
 militant_yellow4 = Militant(True, "yellow", [3, 9])
 
-militant_blue1 = Militant(True, "blue", [7, 8])
-militant_blue2 = Militant(True, "blue", [7, 9])
-militant_blue3 = Militant(True, "blue", [8, 7])
-militant_blue4 = Militant(True, "blue", [9, 7])
+militant_blue1 = Militant(True, "blue", [7, 1])
+militant_blue2 = Militant(True, "blue", [7, 2])
+militant_blue3 = Militant(True, "blue", [8, 3])
+militant_blue4 = Militant(True, "blue", [9, 3])
 
-militant_red1 = Militant(True, "red", [7, 1])
-militant_red2 = Militant(True, "red", [7, 2])
-militant_red3 = Militant(True, "red", [8, 3])
-militant_red4 = Militant(True, "red", [9, 3])
+militant_red1 = Militant(True, "red", [7, 8])
+militant_red2 = Militant(True, "red", [7, 9])
+militant_red3 = Militant(True, "red", [8, 7])
+militant_red4 = Militant(True, "red", [9, 7])
 
 # CHIEFS #
 chief_green = Chief(True, "green", [1, 1])
@@ -54,18 +56,18 @@ assassin_green = Assassin(True, "green", [1, 2])
 
 assassin_yellow = Assassin(True, "yellow", [1, 8])
 
-assassin_blue = Assassin(True, "blue", [9, 8])
+assassin_blue = Assassin(True, "blue", [9, 2])
 
-assassin_red = Assassin(True, "red", [9, 2])
+assassin_red = Assassin(True, "red", [9, 8])
 
 # REPORTERS #
-reporter_green = Reporter(True, "green", [2, 2])
+reporter_green = Reporter(True, "green", [2, 1])
 
 reporter_yellow = Reporter(True, "yellow", [2, 9])
 
-reporter_blue = Reporter(True, "blue", [8, 9])
+reporter_blue = Reporter(True, "blue", [8, 1])
 
-reporter_red = Reporter(True, "red", [8, 1])
+reporter_red = Reporter(True, "red", [8, 9])
 
 # NECROMOBILES #
 necromobile_green = Necromobile(True, "green", [3, 3])

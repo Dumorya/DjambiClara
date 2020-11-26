@@ -45,6 +45,7 @@ class BoardCell:
     def create_button(self, master):
         if self._peon:
             image = Image.open(self._peon.image)
+            image = image.resize((60, 60), Image.ANTIALIAS)
             image_elem = ImageTk.PhotoImage(image)
             button = tk.Button(master, image=image_elem, bg=self._peon.color)
             button.image = image_elem
